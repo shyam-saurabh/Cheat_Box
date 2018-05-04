@@ -14,7 +14,7 @@ If you want to install the latest official version, you can go to the [steam wor
 If you want to have the cutting edge version (that might not be pushed on steam workshop) you can download this repository and place it into your dontstarve mods folder.
 
 ## Archive
-Version 1.x is available to download at [CB.v1](../releases/tag/v1)
+Version 1.x is available to download at [CB.v1](releases/tag/v1)
 
 ## Credits
 All those awesome mod authors from whom i learned.

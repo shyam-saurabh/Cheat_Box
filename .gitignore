@@ -1,0 +1,19 @@
+### Cheat Box ###
+
+#ignore thumbnails created by windows
+Thumbs.db
+
+# Backup Files
+*.BAK
+*.ORG
+
+# Archives
+*.7z
+*.zip
+*.rar
+*.tar.gz
+
+#
+[Dd]evelopment/
+[Dd]ebug/
+[Bb]ackup/

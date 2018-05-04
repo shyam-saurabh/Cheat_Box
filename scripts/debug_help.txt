@@ -1,0 +1,54 @@
+Print Userdata:
+
+	1)
+		local inspect = require "inspect"
+		print(inspect(getmetatable(userdata)))
+
+Print Table:
+
+	1)
+		require "debugtools"
+		dumptable(table)
+		
+	2)
+		local inspect = require "inspect"
+		print(inspect(table))
+
+Passing env from modmain to other files:
+
+	1)
+		-- In Modmain Save Mod Environment
+		package.loaded["cheat_box.modenv"] = env
+
+		-- In other file
+		local _env = require "cheat_box.modenv"
+		
+	2)
+		-- Load other File in modmain with modimport
+		modimport("PATH_FROM_MODROOT/FILENAME.lua")
+		
+	3)
+		-- In Modmain Load Files With Passing Environment
+		require("test/main")(env)
+		
+		-- In Other Files Load Passed Environment and set it as current environment with
+		return function(modenv)
+			setfenv(1, modenv)
+			-- Here modmain env is available
+		end
+		
+	4)
+		-- Get Mod Environment in other files like this
+		
+		-- Get ModName
+		local source = debug.getinfo(1).source
+		local modname = type(source) == "string" and string.match( source:gsub("\\", "/"), ".-/\.\./mods/(.-)/.+\.lua$" ) or nil
+		if not modname then assert("Not valid modname") end
+		
+		-- Get Mod environment
+		if not ModManager or type(ModManager) ~= "table" then return end
+		local _env
+		for _,v in ipairs(ModManager.mods) do _env = v.modname == modname and v.env; break end
+		if not _env or type(_env) ~= "table" or _env.modname ~= modname then
+			assert(string.format("Failed to get %s environment",modname))
+		end

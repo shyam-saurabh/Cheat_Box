@@ -22,7 +22,7 @@ Users who tried and reported problems.
 The lovely folks over at klei for this awesome game.
 	
 ## Licence
-By using mod you agree our [license](../blob/master/LICENSE)
+By using mod you agree our [license](../master/LICENSE)
 	
 ## Disclaimer:
 UNDER NO CIRCUMSTANCE AUTHOR IS RESPONSIBLE FOR ANY KIND OF DAMAGE CAUSED BY USING THE MOD.
